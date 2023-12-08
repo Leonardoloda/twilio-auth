@@ -1,0 +1,21 @@
+{
+  "name": "twilio-auth",
+  "version": "1.0.0",
+  "description": "Monorepo to showcase twilio's authentication",
+  "repository": "https://github.com/Leonardoloda/twilio-auth",
+  "author": "Leo",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build:monolith": "lerna run build --scope=notification-monolith",
+    "start:service": "lerna run start --scope=notification-service",
+    "start:monolith": "lerna run start --scope=notification-monolith",
+    "start": "lerna run start --parallel --scope notification-service --scope notification-monolith"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^8.0.0"
+  }
+}
