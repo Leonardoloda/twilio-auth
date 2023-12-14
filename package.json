@@ -1,29 +1,21 @@
 {
-  "name": "twilio_login",
-  "version": "0.1.0",
-  "private": true,
+  "name": "twilio-auth",
+  "version": "1.0.0",
+  "description": "Monorepo to showcase twilio's authentication",
+  "repository": "https://github.com/Leonardoloda/twilio-auth",
+  "author": "Leo",
+  "license": "UNLICENSED",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build:monolith": "lerna run build --scope=notification-monolith",
+    "start:service": "lerna run start --scope=notification-service",
+    "start:monolith": "lerna run start --scope=notification-monolith",
+    "start": "lerna run start --parallel --scope notification-service --scope notification-monolith"
   },
-  "dependencies": {
-    "@prisma/client": "^5.7.0",
-    "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18"
-  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.3",
-    "postcss": "^8",
-    "prisma": "^5.7.0",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "lerna": "^8.0.0"
   }
 }
